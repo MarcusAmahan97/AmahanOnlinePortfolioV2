@@ -1,69 +1,418 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Section from "../components/Section";
+import ProjectCard from "../components/ProjectCard";
+import ExternalLink from "../components/ExternalLink";
 
 export default function Home() {
+  const [tab, setTab] = useState("background");
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Navbar activeTab={tab} onTabChange={setTab} />
+
+      {/* ───────── BACKGROUND (ME) ───────── */}
+      {tab === "background" && (
+        <>
+          <header className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-8 text-center">
+            <div className="glass-card p-8 sm:p-10">
+              <div className="mx-auto w-60 h-60 sm:w-60 sm:h-60 rounded-full border-4 border-[var(--primary)] overflow-hidden shadow-lg mb-5 bg-slate-200 dark:bg-slate-700">
+                <img
+                  src="/profile.jpg"
+                  alt="Josh Marcus L. Amahan"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h1 className="font-script text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight mb-2">
+                Josh Marcus L. Amahan
+              </h1>
+              <p className="text-[var(--muted)] text-base sm:text-lg mb-1">
+                Bachelor of Science in Information Systems · 3rd Year
+              </p>
+              <p className="text-sm text-[var(--muted)] max-w-xl mx-auto">
+                Mapúa Malayan Colleges Mindanao · Web Development · System Design · HCI · Project Management · Innovation New Technologies
+              </p>
+            </div>
+          </header>
+
+          <Section id="education" title="Educational Background">
+            <ul className="space-y-3 text-left max-w-2xl mx-auto">
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold mt-0.5">•</span>
+                <span>
+                  <strong>Junior High School (Grades 7-9)</strong>
+                  <br />
+                  <span className="text-[var(--muted)]">
+                    Soli Deo Gloria Christian Academy (2011–2021)
+                  </span>
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold mt-0.5">•</span>
+                <span>
+                  <strong>Junior High School (Grade 10)</strong>
+                  <br />
+                  <span className="text-[var(--muted)]">
+                    Green Meadow Christian Academy (2021–2022)
+                  </span>
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold mt-0.5">•</span>
+                <span>
+                  <strong>Senior High School (Grade 11–12)</strong>
+                  <br />
+                  <span className="text-[var(--muted)]">
+                    Mapúa Malayan Colleges Mindanao (2022–2024)
+                  </span>
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold mt-0.5">•</span>
+                <span>
+                  <strong>College (1st Year – 3rd Year)</strong>
+                  <br />
+                  <span className="text-[var(--muted)]">
+                    Mapúa Malayan Colleges Mindanao (2024–Present)
+                  </span>
+                </span>
+              </li>
+            </ul>
+          </Section>
+
+          <Section id="achievements" title="Achievements / Certifications">
+            <ul className="space-y-2 text-left max-w-xl mx-auto">
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold">•</span>
+                MMCM High School – 11-Cohl 2nd Honors
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold">•</span>
+                MMCM High School – 12-Knuth 2nd Honors
+              </li>
+            </ul>
+          </Section>
+
+          <Section id="previous-projects" title="Early Projects">
+            <ul className="space-y-2 text-left max-w-xl mx-auto">
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold">•</span>
+                Trash Rush (Documentation) – Computer Programming Concepts 1
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold">•</span>
+                2Fast2FuriousGarage POS System – Computer Programming Concepts 2 & Object Oriented Programming
+              </li>
+            </ul>
+          </Section>
+
+          <Section id="hobbies" title="Hobbies">
+            <ul className="space-y-2 text-left max-w-xl mx-auto">
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold">•</span>
+                Passion for Classic Cars
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold">•</span>
+                Travelling / Road Tripping
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[var(--primary)] font-bold">•</span>
+                Listening to Nostalgic Songs
+              </li>
+            </ul>
+          </Section>
+        </>
+      )}
+
+      {/* ───────── 2ND YEAR ───────── */}
+      {tab === "second" && (
+        <>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4 text-center">
+            <h2 className="font-script text-2xl sm:text-3xl font-normal tracking-tight">
+              2nd Year
+            </h2>
+            <p className="text-[var(--muted)] text-sm mt-1">
+              Web Programming · Fundamentals of IS · System Analysis &amp; Design · HCI · CCIS Innovision
+            </p>
+          </div>
+
+          {/* Web Programming */}
+          <Section id="web-programming" title="Web Programming Projects">
+            <div className="grid gap-3 max-w-2xl mx-auto">
+              {[
+                {
+                  href: "https://marcusamahan97.github.io/AmahanEnterprises_M1-FA2/",
+                  label: "M1|FA2 – Landing Page Using CSS",
+                },
+                {
+                  href: "https://marcusamahan97.github.io/AMAHAN-JavaScript_M1-FA3/",
+                  label: "M1|FA3 – JavaScript MPs",
+                },
+                {
+                  href: "https://amahanwebappdemo1.vercel.app/",
+                  label: "M1|FA4 – Github to Vercel",
+                },
+                {
+                  href: "https://rideinstyleusousoamahan.vercel.app/",
+                  label: "M1|FA5 – SEO Fundamentals",
+                },
+                {
+                  href: "https://it-103-m1-exam-part3-amahan.vercel.app/",
+                  label: "M1 Summative Exam – Part 3",
+                },
+              ].map((item) => (
+                <div
+                  key={item.href}
+                  className="flex items-center gap-3 p-3.5 rounded-lg bg-white/40 dark:bg-slate-800/40 border border-[var(--card-border)] hover:border-[var(--primary)]/40 transition-colors"
+                >
+                  <span className="text-[var(--primary)] text-lg shrink-0">▸</span>
+                  <ExternalLink href={item.href}>{item.label}</ExternalLink>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          {/* IT103 Summative */}
+          <Section id="it103-summative" title="IT103 Summative Assessment Project">
+            <div className="max-w-xl mx-auto">
+              <div className="flex items-center gap-3 p-4 rounded-lg bg-white/40 dark:bg-slate-800/40 border border-[var(--card-border)] hover:border-[var(--primary)]/40 transition-colors">
+                <span className="text-[var(--primary)] text-lg shrink-0">▸</span>
+                <ExternalLink href="https://alquino-amahan.vercel.app/login.html">
+                  M2 Summative Exam – DERMEDGE POS
+                </ExternalLink>
+              </div>
+            </div>
+          </Section>
+
+          {/* IS100 */}
+          <Section id="is100" title="IS100 M3 Final Project">
+            <div className="space-y-8">
+              <ProjectCard title="Digital Poster">
+                <div className="rounded-xl overflow-hidden border border-[var(--card-border)] bg-slate-100 dark:bg-slate-800 min-h-[200px] flex items-center justify-center">
+                  <img
+                    src="/AMAHAN & FLORES - Digital Poster (IS 100).png"
+                    alt="Digital Poster – IS 100"
+                    className="w-full h-auto max-h-[70vh] object-contain"
+                  />
+                </div>
+              </ProjectCard>
+
+              <ProjectCard title="Digital Report">
+                <div className="pdf-embed">
+                  <embed
+                    src="/AMAHAN & FLORES - Digital Report (IS 100).pdf"
+                    type="application/pdf"
+                  />
+                </div>
+              </ProjectCard>
+
+              <ProjectCard title="Video Demonstration">
+                <div className="video-wrapper shadow-lg">
+                  <iframe
+                    src="https://www.youtube.com/embed/VFLKGN9e5p8"
+                    title="IS100 Video Demonstration"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </ProjectCard>
+            </div>
+          </Section>
+
+          {/* System Analysis & Design */}
+          <Section id="sad" title="System Analysis & Design">
+            <div className="space-y-8">
+              <ProjectCard title="Kuya Weng's Digital Kitchen Order Monitoring and Coordination System">
+                <div className="space-y-4 text-left text-[15px] leading-relaxed">
+                  <p>
+                    <strong className="text-[var(--primary)]">Brief Description:</strong>{" "}
+                    A web-based solution developed for Kuya Weng&apos;s Restaurant to
+                    enhance communication and coordination between cashiers and kitchen
+                    staff.
+                  </p>
+                  <p>
+                    <strong className="text-[var(--primary)]">Project Description:</strong>{" "}
+                    The Digital Kitchen Order Monitoring and Coordination System
+                    streamlines restaurant operations by enabling real-time order
+                    tracking, digital dispatching, ticket number assignment, and
+                    centralized status updates. By replacing manual order slips and
+                    verbal communication, the system reduces delays and missed orders
+                    while improving workflow efficiency. Through its dashboards, staff
+                    can monitor orders seamlessly, ensuring faster service and better
+                    customer satisfaction. Ultimately, the platform strengthens
+                    coordination between front-of-house and kitchen teams, delivering a
+                    more reliable and efficient dining experience.
+                  </p>
+                  <div className="pt-1">
+                    <ExternalLink href="https://team-dand-msad.vercel.app/">
+                      Order Status Page (Home Page)
+                    </ExternalLink>
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <h4 className="font-semibold text-center mb-3 text-[15px]">
+                    Learn more about the system with the video below
+                  </h4>
+                  <div className="video-wrapper shadow-lg">
+                    <iframe
+                      src="https://www.youtube.com/embed/YR-sL2s_Rbw"
+                      title="Kuya Weng's System Demo"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </ProjectCard>
+
+              <ProjectCard title="TEAM D&M Group Portfolio">
+                <div className="text-center">
+                  <ExternalLink href="https://drive.google.com/file/d/1oVi5xM5gvZbRT9PyqwsBslvcrx-0DcyM/view?usp=sharing">
+                    Access Group Portfolio
+                  </ExternalLink>
+                </div>
+              </ProjectCard>
+
+              <ProjectCard title="CCIS Innovision 2026 Award">
+                <div className="rounded-xl overflow-hidden border border-[var(--card-border)] bg-slate-100 dark:bg-slate-800 min-h-[180px] flex items-center justify-center">
+                  <img
+                    src="/Kuya Wengs.jpg"
+                    alt="CCIS Innovision Certificate – Kuya Weng's"
+                    className="w-full h-auto max-h-[60vh] object-contain"
+                  />
+                </div>
+                <p className="text-center font-semibold mt-3">
+                  Kuya Weng&apos;s – Best System Design
+                </p>
+              </ProjectCard>
+            </div>
+          </Section>
+
+          {/* HCI */}
+          <Section id="hci" title="Human Computer Interaction">
+            <div className="space-y-8">
+              <ProjectCard title="Fellowship Hub">
+                <div className="space-y-4 text-left text-[15px] leading-relaxed">
+                  <p>
+                    <strong className="text-[var(--primary)]">Brief Description:</strong>{" "}
+                    A web and mobile-based platform engineered to automate
+                    administrative meeting tasks using modern artificial intelligence
+                    and fast verification tracking.
+                  </p>
+                  <p>
+                    <strong className="text-[var(--primary)]">Project Description:</strong>{" "}
+                    Fellowship Hub streamlines attendance monitoring and meeting
+                    documentation through secure QR code scanning, real-time
+                    speech-to-text transcription, automated AI-generated meeting
+                    summaries, and a centralized record management dashboard.
+                  </p>
+                  <div className="pt-1">
+                    <ExternalLink href="https://fellowshiphub.vercel.app/login">
+                      Access Fellowship Hub
+                    </ExternalLink>
+                  </div>
+                </div>
+              </ProjectCard>
+
+              <ProjectCard title="Input and Interaction">
+                <div className="pdf-embed">
+                  <embed
+                    src="/01 Coursera - Input and Interaction.pdf"
+                    type="application/pdf"
+                  />
+                </div>
+              </ProjectCard>
+
+              <ProjectCard title="Introduction to User Experience Design">
+                <div className="pdf-embed">
+                  <embed
+                    src="/02 Coursera - Introduction to User Experience Design.pdf"
+                    type="application/pdf"
+                  />
+                </div>
+              </ProjectCard>
+            </div>
+          </Section>
+
+          {/* CCIS Innovision */}
+          <Section id="ccis" title="CCIS Innovision 2026">
+            <div className="space-y-8">
+              <ProjectCard title="CCIS Innovision 2026 Award">
+                <div className="rounded-xl overflow-hidden border border-[var(--card-border)] bg-slate-100 dark:bg-slate-800 min-h-[180px] flex items-center justify-center">
+                  <img
+                    src="/Kuya Wengs.jpg"
+                    alt="CCIS Innovision Award"
+                    className="w-full h-auto max-h-[60vh] object-contain"
+                  />
+                </div>
+              </ProjectCard>
+
+              <ProjectCard title="CCIS Innovision 2026 EventFlow Certificate">
+                <div className="pdf-embed">
+                  <embed
+                    src="/CCIS Innovision 2026 EventFlow Certificate - Amahan.pdf"
+                    type="application/pdf"
+                  />
+                </div>
+              </ProjectCard>
+
+              <ProjectCard title="CCIS Innovision 2026 Participation">
+                <div className="rounded-xl overflow-hidden border border-[var(--card-border)] bg-slate-100 dark:bg-slate-800 min-h-[180px] flex items-center justify-center">
+                  <img
+                    src="/CCIS Innovision 2026 - Amahan.jpg"
+                    alt="CCIS Innovision Participation"
+                    className="w-full h-auto max-h-[60vh] object-contain"
+                  />
+                </div>
+              </ProjectCard>
+            </div>
+          </Section>
+        </>
+      )}
+
+      {/* ───────── 3RD YEAR ───────── */}
+      {tab === "third" && (
+        <>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4 text-center">
+            <h2 className="font-script text-2xl sm:text-3xl font-normal tracking-tight">
+              3rd Year - Digital Portfolio
+            </h2>
+            <p className="text-[var(--muted)] text-sm mt-1">
+              IS Innovation and New Technologies · IS Project Management
+            </p>
+          </div>
+
+          <Section id="third-year" title="Third Year Courses">
+            <div className="space-y-8">
+              <ProjectCard title="IS Innovation and New Technologies">
+                <p className="text-center text-[var(--muted)] text-sm leading-relaxed">
+                  Content coming soon. Structure this the same way as Human Computer
+                  Interaction (project cards, descriptions, links, media).
+                </p>
+              </ProjectCard>
+
+              <ProjectCard title="IS Project Management (Lab and Lecture)">
+                <p className="text-center text-[var(--muted)] text-sm leading-relaxed">
+                  Content coming soon. Structure this the same way as Human Computer
+                  Interaction (project cards, descriptions, links, media).
+                </p>
+              </ProjectCard>
+            </div>
+          </Section>
+        </>
+      )}
+
+      <footer className="max-w-5xl mx-auto px-4 sm:px-6 pb-12 pt-4 text-center">
+        <div className="glass-card py-5">
+          <p className="text-sm text-[var(--muted)]">
+            © {new Date().getFullYear()} Josh Marcus L. Amahan · Built with Next.js
+            & Tailwind CSS
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </>
   );
 }
