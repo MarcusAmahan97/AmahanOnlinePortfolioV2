@@ -95,7 +95,7 @@ export default function Home() {
             </ul>
           </Section>
 
-          <Section id="previous-projects" title="Early Projects">
+          <Section id="previous-projects" title="Earlier Projects">
             <ul className="space-y-2 text-left max-w-xl mx-auto">
               <li className="flex gap-3">
                 <span className="text-[var(--primary)] font-bold">•</span>
@@ -373,37 +373,171 @@ export default function Home() {
         </>
       )}
 
-      {/* ───────── 3RD YEAR ───────── */}
-      {tab === "third" && (
-        <>
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4 text-center">
-            <h2 className="font-script text-2xl sm:text-3xl font-normal tracking-tight">
-              3rd Year - Digital Portfolio
-            </h2>
-            <p className="text-[var(--muted)] text-sm mt-1">
-              IS Innovation and New Technologies · IS Project Management
-            </p>
+      {/* ── 3RD YEAR ── */}
+    {tab === "third" && (
+      <>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4 text-center">
+          <h2 className="font-script text-2xl sm:text-3xl font-normal tracking-tight">
+            3rd Year (Digital Portfolio)
+          </h2>
+          <p className="text-[var(--muted)] text-sm mt-1">
+            IS Innovation and New Technologies · IS Project Management
+          </p>
+        </div>
+
+        {/* ========== IS INNOVATION ========== */}
+        <Section id="is-innovation" title="IS Innovation and New Technologies (IS113)">
+          <div className="space-y-8">
+
+            {/* Course & Student Information */}
+            <ProjectCard title="Course and Student Information">
+              <div className="text-left max-w-lg mx-auto space-y-2 text-[15px]">
+                <p><strong>Student Name:</strong> Josh Marcus L. Amahan</p>
+                <p><strong>Student Number:</strong> 2022110920</p>
+                <p><strong>Course Code / Section:</strong> IS113 / A323</p>
+                <p><strong>Term:</strong> 1st Term – A.Y. 2026–2027</p>
+              </div>
+            </ProjectCard>
+
+            {/* Week 4 */}
+            <ProjectCard title="Organizational Problem Analysis (Week 4)">
+              <div className="pdf-embed">
+                <embed
+                  src="/Amahan_Week4_Organizational_Problem_Analysis.pdf"
+                  type="application/pdf"
+                />
+              </div>
+            </ProjectCard>
+
+            {/* Week 7 */}
+            <ProjectCard title="Technology Evaluation Matrix (Week 7)">
+              <div className="pdf-embed">
+                <embed
+                  src="/Amahan_Week7_Technology_Evaluation_Matrix.pdf"
+                  type="application/pdf"
+                />
+              </div>
+            </ProjectCard>
+
+            {/* Week 8 – Literature Review */}
+            <ProjectCard title="Literature Review Matrix (Week 8)">
+              <div className="pdf-embed">
+                <embed
+                  src="/Amahan_Week8_Responsible_Technology_Adoption.pdf"
+                  type="application/pdf"
+                />
+              </div>
+            </ProjectCard>
+
+            {/* Week 8 – Conceptual Framework */}
+            <ProjectCard title="Conceptual Framework (Week 8)">
+              <div className="pdf-embed">
+                <embed
+                  src="/FlowBikes_Module_2_Summative_Assessment.pdf"
+                  type="application/pdf"
+                />
+              </div>
+            </ProjectCard>
+
+            {/* Week 10 */}
+            <ProjectCard title="Digital Innovation Strategy Analysis (Week 10)">
+              <div className="pdf-embed">
+                <embed
+                  src="/MAAFF_IS113_Week10_Digital_Innovation_Strategy_FlowBikes.pdf"
+                  type="application/pdf"
+                />
+              </div>
+            </ProjectCard>
+
+            {/* Final Research Paper */}
+            <ProjectCard title="Final Digital Innovation Research Paper">
+              <div className="pdf-embed">
+                <embed
+                  src="/IS113_MAAFF_FinalResearchPaper.pdf"
+                  type="application/pdf"
+                />
+              </div>
+            </ProjectCard>
+
+            {/* Executive Presentation */}
+            <ProjectCard title="Executive Innovation Presentation">
+              <div className="text-center space-y-3">
+                <p className="text-sm text-[var(--muted)]">
+                  PowerPoint presentation – open or download to view.
+                </p>
+                <a
+                  href="/IS113_MAAFF_FinalPresentation.ppt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white font-semibold text-sm transition-all"
+                >
+                  Open / Download Presentation
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                </a>
+              </div>
+            </ProjectCard>
+
+            {/* Coursera Certificate */}
+            <ProjectCard title="Coursera Completion Evidence">
+              <div className="space-y-6">
+                {/* Image */}
+                <div className="rounded-xl overflow-hidden border border-[var(--card-border)] bg-slate-100 dark:bg-slate-800 min-h-[180px] flex items-center justify-center">
+                  <img
+                    src="/IS113_Amahan_Coursera_Certificate.jpg"
+                    alt="Coursera Certificate – IS113"
+                    className="w-full h-auto max-h-[70vh] object-contain"
+                  />
+                </div>
+
+                {/* PDF */}
+                <div className="pdf-embed">
+                  <embed
+                    src="/IS113_Amahan_Coursera_Evidence.pdf"
+                    type="application/pdf"
+                  />
+                </div>
+              </div>
+            </ProjectCard>
+
+            {/* Coursera Application Brief */}
+            <ProjectCard title="Coursera Application Brief">
+              <div className="pdf-embed">
+                <embed
+                  src="/IS113_Amahan_Coursera_Application_Brief.pdf"
+                  type="application/pdf"
+                />
+              </div>
+            </ProjectCard>
+
+            {/* Reflection */}
+            <ProjectCard title="Course Reflection">
+              <div className="pdf-embed">
+                <embed
+                  src="/IS113_Amahan_Course_Reflection.pdf"
+                  type="application/pdf"
+                />
+              </div>
+            </ProjectCard>
+
           </div>
+        </Section>
 
-          <Section id="third-year" title="Third Year Courses">
-            <div className="space-y-8">
-              <ProjectCard title="IS Innovation and New Technologies">
-                <p className="text-center text-[var(--muted)] text-sm leading-relaxed">
-                  Content coming soon. Structure this the same way as Human Computer
-                  Interaction (project cards, descriptions, links, media).
-                </p>
-              </ProjectCard>
-
-              <ProjectCard title="IS Project Management (Lab and Lecture)">
-                <p className="text-center text-[var(--muted)] text-sm leading-relaxed">
-                  Content coming soon. Structure this the same way as Human Computer
-                  Interaction (project cards, descriptions, links, media).
-                </p>
-              </ProjectCard>
-            </div>
-          </Section>
-        </>
-      )}
+        {/* ========== PROJECT MANAGEMENT (placeholder for now) ========== */}
+        <Section id="is-pm" title="IS Project Management (Lab and Lecture)">
+          <div className="space-y-8">
+            <ProjectCard title="Individual Digital Course Portfolio">
+              <p className="text-center text-[var(--muted)] text-sm leading-relaxed">
+                Content coming soon. Structure will follow the required sections
+                (Cover Page, Learning Goals, Project Overview, PM Rotation,
+                Contributions, Evidence, Reflection, Achievements, AI Use, etc.).
+              </p>
+            </ProjectCard>
+          </div>
+        </Section>
+      </>
+    )}
 
       <footer className="max-w-5xl mx-auto px-4 sm:px-6 pb-12 pt-4 text-center">
         <div className="glass-card py-5">
