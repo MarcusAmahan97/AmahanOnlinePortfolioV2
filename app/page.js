@@ -528,11 +528,12 @@ export default function Home() {
         <Section id="is-pm" title="IS Project Management (Lab and Lecture)">
           <div className="space-y-8">
             <ProjectCard title="Individual Digital Course Portfolio">
-              <p className="text-center text-[var(--muted)] text-sm leading-relaxed">
-                Content coming soon. Structure will follow the required sections
-                (Cover Page, Learning Goals, Project Overview, PM Rotation,
-                Contributions, Evidence, Reflection, Achievements, AI Use, etc.).
-              </p>
+              <div className="pdf-embed">
+                <embed
+                  src="/IS132-1L_FlowBikes_DigitalCoursePortfolio_Amahan.pdf"
+                  type="application/pdf"
+                />
+              </div>
             </ProjectCard>
           </div>
         </Section>
